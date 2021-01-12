@@ -2,7 +2,7 @@
 ## What does this program do?
 eReuse.org Workbench Desktop is a desktop cross-platform application which intends to extract information about the hardware of computer devices and deliver a snapshot.
 ## How it works?
-![Tux, the Linux mascot](/Diagram/Workbench_Desktop.png)
+![Tux, the Linux mascot](/diagram/Workbench_Desktop.png)
 ## Dependencies
 In order to execute this program properly you have to install the SmartmonTools version 7 or superior program and the dmidecode package (only in Linux).
 ### Linux
