@@ -1,0 +1,152 @@
+{
+  "general":
+  {
+    "exit_button":
+    {
+      "ENG" : "Exit",
+      "ESP" : "Salir",
+      "CAT" : "Sortir"
+    },
+    "back_button":
+    {
+      "ENG" : "Back",
+      "ESP" : "Volver",
+      "CAT" : "Tornar"
+    },
+    "snapshot_error":
+    {
+      "ENG" : "Something went wrong taking the snapshot",
+      "ESP" : "Algo salió mal tomando la instantánea",
+      "CAT" : "Quelcom ha fallat prenent la instantània"
+    },
+    "retry":
+    {
+      "ENG" : "Retry",
+      "ESP" : "Reintentar",
+      "CAT" : "Reintentar"
+    }
+  },
+  "main_menu":
+  {
+    "snapshot_button":
+    {
+      "ENG" : "Take a snapshot",
+      "ESP" : "Toma una instantánea",
+      "CAT" : "Prendre una instantània"
+    },
+    "settings_button":
+    {
+      "ENG" : "Settings",
+      "ESP" : "Configuración",
+      "CAT" : "Configuració"
+    }
+  },
+  "settings_menu":
+  {
+    "settings_title":
+    {
+      "ENG" : "Settings Menu",
+      "ESP" : "Menú de configuración",
+      "CAT" : "Menú de configuració"
+    },
+    "language_label":
+    {
+      "ENG" : "Language: ",
+      "ESP" : "Idioma: ",
+      "CAT" : "Idioma: "
+    },
+    "url_label":
+    {
+      "ENG" : "DeviceHub Address: ",
+      "ESP" : "Dirección DeviceHub: ",
+      "CAT" : "Direcció DeviceHub: "
+    },
+    "save_button":
+    {
+      "ENG" : "Save",
+      "ESP" : "Guardar",
+      "CAT" : "Guardar"
+    }
+  },
+  "progress_menu":
+  {
+    "title_working":
+    {
+      "ENG" : "We are working on it, please wait",
+      "ESP" : "Estamos trabajando en ello, por favor espera",
+      "CAT" : "Estem treballant en això, si us plau espera"
+    },
+    "title_reusing":
+    {
+      "ENG" : "Recycling electronic devices can help create local jobs over the world",
+      "ESP" : "Reciclar dispositivos electrónicos ayuda a crear empleos locales alrededor del mundo",
+      "CAT" : "Reciclar dispositius electrònics ajuda a crear llocs de treball locals arreu del món"
+    },
+    "title_time":
+    {
+      "ENG" : "This action will not last more than 30 seconds, please be patient",
+      "ESP" : "Esta acción no durará más de 30 segundos, por favor sé paciente",
+      "CAT" : "Aquesta acció no durarà més de 30 segons, si us plau sigues pacient"
+    }
+  },
+  "consent_menu":
+  {
+    "title_consent":
+    {
+      "ENG" : "Consent Agreement",
+      "ESP" : "Acuerdo de consentimiento",
+      "CAT" : "Acord de consentiment"
+    },
+    "view_json_button":
+    {
+      "ENG" : "View generated data",
+      "ESP" : "Ver datos generados",
+      "CAT" : "Veure dades generades"
+    },
+    "checkbox_consent":
+    {
+      "ENG" : "I accept the terms and I consent to send my data",
+      "ESP" : "Acepto los términos y consiento el envío de mis datos",
+      "CAT" : "Accepto els termes i consenteixo l'enviament de les meves dades"
+    },
+    "submit_button":
+    {
+      "ENG" : "Send",
+      "ESP" : "Envia",
+      "CAT" : "Envia"
+    },
+    "title_view_json":
+    {
+      "ENG" : "Generated data",
+      "ESP" : "Datos generados",
+      "CAT" : "Dades generades"
+    }
+  },
+  "final_menu":
+  {
+    "upload_final_ok":
+    {
+      "ENG" : "Snapshot successfully uploaded",
+      "ESP" : "La instantánea se ha subido correctamente",
+      "CAT" : "La instantània se n'ha pujat correctament"
+    },
+    "upload_final_fail":
+    {
+      "ENG" : "The Snapshot failed to upload",
+      "ESP" : "La instantànea ha fallado en subirse al servidor",
+      "CAT" : "La instantània ha fallat en pujar-se'n al servidor"
+    },
+    "thank_final_ok":
+    {
+      "ENG" : "Thank you for using Workench",
+      "ESP" : "Gracias por usar Workbench",
+      "CAT" : "Gràcies per utilitzar Workbench"
+    },
+    "try_final_fail":
+    {
+      "ENG" : "Please try it again",
+      "ESP" : "Por favor, vuelva a intentarlo",
+      "CAT" : "Si us plau, torni a intentar-ho"
+    }
+  }
+}
