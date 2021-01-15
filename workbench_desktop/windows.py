@@ -4,8 +4,7 @@ import subprocess
 import time
 import uuid
 import platform
-import workbench_desktop.utils as utils
-
+import utils
 os.environ["COMSPEC"] = 'powershell'
 
 
