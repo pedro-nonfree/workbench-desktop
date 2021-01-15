@@ -5,10 +5,10 @@ import tkinter as tk
 import subprocess
 from tkinter import scrolledtext as st
 from tkinter import ttk
-import workbench_desktop.api as api
-import workbench_desktop.linux as linux
-import workbench_desktop.macos as macos
-import workbench_desktop.windows as windows
+import api
+import linux
+import macos
+import windows
 
 
 
