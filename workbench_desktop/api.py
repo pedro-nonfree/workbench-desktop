@@ -4,7 +4,7 @@ import semver
 
 
 def send_snapshot(domain, snapshot):
-    URL_upload = "https://" + domain + "/usodybeta/lives/"
+    URL_upload = "http://" + domain + "/lives/"
     post_headers = {'Content-type': 'application/json'}
     snapshot_json = json.dumps(snapshot, indent=2)
     try:
@@ -18,7 +18,7 @@ def send_snapshot(domain, snapshot):
 
 
 def get_license(domain, version, language):
-    URL_license = "https://" + domain + "/usodybeta/licences/"
+    URL_license = "http://" + domain + "/licences/"
     try:
         response = requests.get(URL_license)
         if response.status_code == 200:
