@@ -2,7 +2,7 @@
 ## What does this program do?
 eReuse.org Workbench Desktop is a desktop cross-platform application which intends to extract information about the hardware of computer devices and deliver a snapshot.
 ## How it works?
-![Tux, the Linux mascot](/diagram/Workbench_Desktop.png)
+![Workbench Desktop](/diagram/Workbench_Desktop.png)
 ## Dependencies
 In order to execute this program properly you have to install the SmartmonTools version 7 or superior program and the dmidecode package (only in Linux).
 ### Linux
@@ -16,6 +16,15 @@ The program is already included in the installation process, you only have to ex
 ### MacOS
 If you do not have installed brew in MacOS, open a terminal and type in the next command: **$ /bin/bash -c "$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/HEAD/install.sh)"** \
 Then type the following in your terminal: **$ brew install smartmontools**
+## Building
+In order to build the different releases for the objective operating system, the usage of the PyInstaller library is mandatory.
+### Linux
+- Execute: **pyinstaller --windowed -F --icon="path to .ico" -n "workbench" workbench.py**
+### Windows
+- Execute: **pyinstaller --windowed -F --uac-admin --icon="path to .ico" -n "workbench" workbench.py**
+- There is a script writen that 
+### MacOS
+- Execute: **pyinstaller --windowed -F --icon="path to .icns" -n "workbench" workbench.py**
 ## Installation
 ### Linux
 - Extract the workbench.tar.gz file: **$ tar -xvf workbench.tar.gz**
