@@ -1,10 +1,12 @@
 import json
 import os
+import platform
 import subprocess
 import time
 import uuid
-import platform
+
 import utils
+
 os.environ["COMSPEC"] = 'powershell'
 
 
@@ -187,7 +189,7 @@ class Windows:
                 ram_json['interface'] = None
                 ram_json['serialNumber'] = None
                 components.append(ram_json)
-                
+
         else:
             ram_json = {'type': 'RamModule', 'serialNumber': -1}
             components.append(ram_json)
@@ -206,7 +208,8 @@ class Windows:
             count_disk = 0
             for disk in output_json['devices']:
                 if disk['type'] == 'ata' and disk['name'].find('/dev/sd') != -1:
-                    cmd = ['Get-Disk -Number ' + str(count_disk) + ' | select Model, Size, SerialNumber | ConvertTo-JSON']
+                    cmd = [
+                        'Get-Disk -Number ' + str(count_disk) + ' | select Model, Size, SerialNumber | ConvertTo-JSON']
                     proc = subprocess.Popen(cmd, shell=True, stdout=subprocess.PIPE, stderr=subprocess.STDOUT,
                                             stdin=subprocess.PIPE)
                     output, errors = proc.communicate()
@@ -269,7 +272,7 @@ class Windows:
                         os.remove("testfile")
                     else:
                         smart = {'type': 'TestDataStorage',
-                        'length': 'Short', 'status': 'Completed with error'}
+                                 'length': 'Short', 'status': 'Completed with error'}
                         actions.append(smart)
                         benchmark = {}
                         start_time_benchmark_hdd = time.time()
@@ -364,5 +367,5 @@ class Windows:
                                         'serialNumber': None}
                         components.append(battery_json)
             else:
-                battery_json = {'type' : 'Battery', 'serialNumber': -1}
+                battery_json = {'type': 'Battery', 'serialNumber': -1}
                 components.append(battery_json)

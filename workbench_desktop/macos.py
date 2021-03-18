@@ -1,9 +1,9 @@
 import json
+import platform
 import plistlib
 import subprocess
 import time
 import uuid
-import platform
 
 
 class MacOS:

@@ -1,8 +1,9 @@
-import uuid
-import time
-import subprocess
 import json
 import platform
+import subprocess
+import time
+import uuid
+
 from dmiparser import DmiParser
 
 
@@ -17,23 +18,24 @@ class Linux:
         self.snapshot['type'] = 'Live'
         self.snapshot['software'] = 'WorkbenchDesktop'
         self.snapshot['version'] = version
-        self.snapshot['os'] = platform.platform(terse=True).split('-')[0] + " " + \
-                              platform.platform(terse=True).split('-')[1]
+        # self.snapshot['os'] = platform.platform(terse=True).split('-')[0] + " " + \
+        #                      platform.platform(terse=True).split('-')[1]
 
         device_dict = self.device()
 
         components = list()
-        self.motherboard(components)
-        self.processor(components)
-        self.memory(components)
+        # self.motherboard(components)
+        # self.processor(components)
+        # self.memory(components)
         self.disk(components)
-        self.graphics(components)
+        # self.graphics(components)
         self.network_interface(components)
-        self.power_supply(components)
+        # self.power_supply(components)
 
         self.snapshot['device'] = device_dict
         self.snapshot['components'] = components
 
+        self.snapshot['licence_version'] = '0.0.0'
         return self.snapshot
 
     # obtain System related information
@@ -47,10 +49,18 @@ class Linux:
 
         if proc.returncode >= 0:
             output_json = json.loads(str(DmiParser(output.decode('utf8'))))
-
-            device_info['serialNumber'] = output_json[0]['props']['Serial Number']['values'][0]
-            device_info['sku'] = output_json[0]['props']['SKU Number']['values'][0]
-            device_info['manufacturer'] = output_json[0]['props']['Manufacturer']['values'][0]
+            try:
+                device_info['serialNumber'] = output_json[0]['props']['Serial Number']['values'][0]
+            except:
+                device_info['serialNumber'] = None
+            try:
+                device_info['sku'] = output_json[0]['props']['SKU Number']['values'][0]
+            except:
+                device_info['sku'] = None
+            try:
+                device_info['manufacturer'] = output_json[0]['props']['Manufacturer']['values'][0]
+            except:
+                device_info['manufacturer'] = None
             try:
                 device_info['model'] = output_json[0]['props']['Version']['values'][0]
             except:
@@ -66,9 +76,10 @@ class Linux:
 
         if proc.returncode >= 0:
             output_json = json.loads(str(DmiParser(output.decode('utf8'))))
-
-            device_info['chassis'] = output_json[0]['props']['Type']['values'][0]
-
+            try:
+                device_info['chassis'] = output_json[0]['props']['Type']['values'][0]
+            except:
+                device_info['chassis'] = None
             if device_info['chassis'].find('book') != -1:
                 self.desktop = False
                 device_info['type'] = 'Laptop'
@@ -297,8 +308,7 @@ class Linux:
             for nic in output_json:
                 if nic['ifname'].find('vir') == -1 and nic['ifname'].find('docker') == -1 and nic['ifname'].find(
                         'lo') == -1:
-                    interface = {'type': 'NetworkAdapter', 'serialNumber': nic['address'], 'speed': nic['txqlen'],
-                                 'model': None, 'manufacturer': None, 'wireless': False}
+                    interface = {'type': 'NetworkAdapter', 'serialNumber': nic['address'], 'wireless': False}
 
                     components.append(interface)
         else:

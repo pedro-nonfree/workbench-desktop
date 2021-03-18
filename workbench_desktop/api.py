@@ -1,10 +1,11 @@
 import json
+
 import requests
 import semver
 
 
 def send_snapshot(domain, snapshot):
-    URL_upload = "http://" + domain + "/lives/"
+    URL_upload = "https://" + domain + "/lives/"
     post_headers = {'Content-type': 'application/json'}
     snapshot_json = json.dumps(snapshot, indent=2)
     try:
