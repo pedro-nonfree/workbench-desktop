@@ -1,5 +1,17 @@
+# Byte-compiled / optimized / DLL files
+__pycache__/
+*.py[cod]
+*$py.class
 
+# Vim swap files
+*.swp
+*.swo
+
+# Distribution / packaging
+workbench_desktop/dist
 /.idea
 venv
 .vscode
 .env
+workbench_desktop/build/
+workbench_desktop/workbench-desktop-linux.spec
