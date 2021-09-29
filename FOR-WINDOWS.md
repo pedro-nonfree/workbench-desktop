@@ -1,3 +1,5 @@
+# workbench-desktop for Windows
+
 ## Dependencies
 
 In order to execute this program properly you have to install the SmartmonTools version 7 or superior program and the dmidecode package (only in Linux).
